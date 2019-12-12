@@ -19,7 +19,7 @@
          <WorkingDirectory>%APSIM%</WorkingDirectory>
          <CommandLine>cmd.exe /c if exist "%APPDATA%\APSIM" rd /S /Q "%APPDATA%\APSIM"</CommandLine>
          <CommandLineUnix>/bin/true</CommandLineUnix>
-      </Job>      
+      </Job>
       <Job name="Version stamp the build">
          <DependsOn>Clean model directory</DependsOn>
          <WorkingDirectory>%APSIM%/Model/Build</WorkingDirectory>
@@ -226,7 +226,7 @@
          <DependsOn>Compile DotNetProxies</DependsOn>
          <WorkingDirectory>%APSIM%/Model/PatchData</WorkingDirectory>
          <CommandLine>make</CommandLine>
-      </Job>      
+      </Job>
       <Job name="Compile Irrigation">
          <DependsOn>Compile FortranInfrastructure</DependsOn>
          <DependsOn>Compile FortranComponentInterface</DependsOn>
@@ -306,13 +306,6 @@
          <DependsOn>Compile FortranComponentInterface</DependsOn>
          <WorkingDirectory>%APSIM%/Model/Oryza</WorkingDirectory>
          <CommandLine>make</CommandLine>
-      </Job>
-      <Job name="Compile Cotton">
-         <DependsOn>Compile CMPServices</DependsOn>
-         <DependsOn>Compile CSGeneral</DependsOn>
-         <WorkingDirectory>%APSIM%/Model/Cotton</WorkingDirectory>
-         <CommandLine>make</CommandLine>
-         <CommandLineUnix>make -f Makefile.unix</CommandLineUnix>
       </Job>
       <Job name="Compile Parasite">
          <DependsOn>Compile FortranInfrastructure</DependsOn>
@@ -481,7 +474,7 @@
          <DependsOn>Compile CropTemplate</DependsOn>
          <WorkingDirectory>%APSIM%/Model/Sugar</WorkingDirectory>
          <CommandLine>make</CommandLine>
-      </Job>   
+      </Job>
       <Job name="Compile Supplement">
          <DependsOn>Compile ComponentInterface</DependsOn>
          <WorkingDirectory>%APSIM%/Model/Supplement</WorkingDirectory>
@@ -578,7 +571,7 @@
          <CommandLineUnix>/bin/true</CommandLineUnix>
       </Job>
       <Job name="Compile WaterAllocator">
- 	       <DependsOn>Compile CMPServices</DependsOn>	
+ 	       <DependsOn>Compile CMPServices</DependsOn>
          <WorkingDirectory>%APSIM%/Model/WaterAllocator</WorkingDirectory>
          <CommandLine>make</CommandLine>
       </Job>
@@ -750,7 +743,7 @@
          <DependsOn>Compile DotNetProxies</DependsOn>
          <WorkingDirectory>%APSIM%/Model/SoilArbitrator</WorkingDirectory>
          <CommandLine>make</CommandLine>
-      </Job>	
+      </Job>
 	  <Job name="Compile Agroforestry">
          <DependsOn>Compile CSGeneral</DependsOn>
          <DependsOn>Compile CSDotNetComponentInterface</DependsOn>
@@ -872,7 +865,7 @@
       <FindJob name="Find .con Tests">
          <FileSpec>%APSIM%/Tests/*.con</FileSpec>
          <TargetFolder>Tests</TargetFolder>
-      </FindJob>	  
+      </FindJob>
       <FindJob name="Find Examples">
          <FileSpec>%APSIM%/Examples/*.apsim</FileSpec>
          <TargetFolder>Tests</TargetFolder>
@@ -898,7 +891,7 @@
       <Job name="Apsim NUNIT tests">
          <WorkingDirectory>%APSIM%/Model</WorkingDirectory>
          <CommandLine>APSIM.Tests.exe --out=%APSIM%/Model/Tests/APSIM.Tests.out  --workers=1 --noresult</CommandLine>
-      </Job>   
+      </Job>
    </Target>
 
   <!-- ############### All test simulations will go here ############### -->
