@@ -247,11 +247,11 @@
          <WorkingDirectory>%APSIM%/Model/Maize</WorkingDirectory>
          <CommandLine>make</CommandLine>
       </Job>
-      <Job name="Compile MaizeZ">
+      <!-- <Job name="Compile MaizeZ">
          <DependsOn>Compile ComponentInterface2</DependsOn>
          <WorkingDirectory>%APSIM%/Model/MaizeZ</WorkingDirectory>
          <CommandLine>make</CommandLine>
-      </Job>
+      </Job> -->
       <Job name="Compile Manager">
          <DependsOn>Compile FortranInfrastructure</DependsOn>
          <DependsOn>Compile FortranComponentInterface</DependsOn>
