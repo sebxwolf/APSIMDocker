@@ -57,7 +57,7 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E03280
 
 ## Get built artifact and extract
 ### /apsim needs to have 755 permissions so that non-privileged users can use the container
-COPY --from=builder /apsim/Release/Apsim*.binaries.LINUX.X86_64.exe /tmp/apsim-release.exe
+COPY --from=builder /apsim/trunk/Release/Apsim*.binaries.LINUX.X86_64.exe /tmp/apsim-release.exe
 RUN /tmp/apsim-release.exe -y -o/apsim && \
   rm -f /tmp/apsim-release.exe && \
   chmod 755 apsim
